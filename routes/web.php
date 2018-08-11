@@ -27,3 +27,26 @@ Route::get('mon-an/{mon_an?}', function ($mon_an = 'KFC'){
 Route::get('thong-tin/{hoten}/{sodienthoai}', function ($hoten, $sodienthoai){
     return $hoten . ' ' . $sodienthoai;
 })->where(['hoten' => '[a-zA-Z]+', 'sodienthoai' => '[0-9]{9,10}']);
+
+Route::get('call-view', function(){
+    $hoten = 'Nguyen Hong Quan';
+    $view = 'call view';
+    return view('view', compact('hoten','view'));
+});
+
+Route::get('test-controller', 'WelcomController@testAction');
+Route::get('ho-chi-minh', ['as' => 'hcm', function() {
+    return 'Ho Chi Minh dep lam ban oi';
+}]);
+
+Route::group(['prefix' => 'thuc-don'], function(){
+    Route::get('bun-bo', function(){
+        echo 'day la trang bun bo';
+    });
+    Route::get('bun-moc', function(){
+        echo 'day la trang bun moc';
+    });
+    Route::get('bun-mam', function(){
+        echo 'day la trang bun mam';
+    });
+});
