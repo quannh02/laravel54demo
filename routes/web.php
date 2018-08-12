@@ -50,3 +50,25 @@ Route::group(['prefix' => 'thuc-don'], function(){
         echo 'day la trang bun mam';
     });
 });
+
+Route::get('goi-view', ['as' => 'goi_view', function() {
+    return view('layout.sub.view');
+}]);
+
+Route::get('goi-layout', ['as' => 'goi_layout', function() {
+    return view('layout.sub.layout');
+}]);
+
+
+View::share('title', 'Lap trinh laravel 5x');
+View::composer(['layout.sub.layout','layout.sub.view'], function($view){
+    return $view->with('thongtin', 'Day la trang ca nhan');
+});
+
+Route::get('check-view', function(){
+    if (view()->exists('layout.sub.layout1')) {
+        return 'Ton tai view';
+    } else {
+        return 'Ko ton tai view';
+    }
+});
