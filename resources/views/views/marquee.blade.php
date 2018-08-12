@@ -1,0 +1,1 @@
+<marquee>{{ $content }}</marquee>

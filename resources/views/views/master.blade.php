@@ -8,6 +8,7 @@
     <title>Day la khoa hoc lap trinh khoa pham @yield('title')</title>
 </head>
 <body>
+@include('views.marquee', ['content' => 'Khoa hoc lap trinh laravel'])
 @section('sidebar')
     Day la trang master sidebar
     @show

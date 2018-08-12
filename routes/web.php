@@ -74,5 +74,5 @@ Route::get('check-view', function(){
 });
 
 Route::get('goi-master', ['as' => 'goi_layout', function() {
-    return view('views.sub');
+    return view('views.layout');
 }]);
