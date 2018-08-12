@@ -76,3 +76,18 @@ Route::get('check-view', function(){
 Route::get('goi-master', ['as' => 'goi_layout', function() {
     return view('views.layout');
 }]);
+Route::get('url-full',  function() {
+    return URL::full();
+});
+
+Route::get('url-asset',  function() {
+//    return URL::asset('css/mystyle.css'); laravel 4
+//    return asset('css/mystyle.css');
+    return asset('css/mystyle.css', true); // https
+});
+
+Route::get('url/to', function() {
+//    return URL::to('thong-tin', ['quoctuan', '09128784728']);
+//    return URL::to('thong-tin', ['quoctuan', '09128784728'], true);
+    return secure_url('thong-tin', ['hongquan', '09128784728']);
+});
