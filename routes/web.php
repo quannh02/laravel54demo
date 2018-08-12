@@ -72,3 +72,7 @@ Route::get('check-view', function(){
         return 'Ko ton tai view';
     }
 });
+
+Route::get('goi-master', ['as' => 'goi_layout', function() {
+    return view('views.sub');
+}]);
